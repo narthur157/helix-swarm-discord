@@ -9,7 +9,7 @@
 
 use Events\Listener\ListenerFactory as EventListenerFactory;
 
-$listeners = [Discord\DiscordActivityListener::class];
+$listeners = [Discord\Listener\DiscordActivityListener::class];
 
 return [
     'listeners' => $listeners,
@@ -21,7 +21,7 @@ return [
     ],
     EventListenerFactory::EVENT_LISTENER_CONFIG => [
         EventListenerFactory::TASK_COMMIT => [
-            Discord\DiscordActivityListener::class => [
+            Discord\Listener\DiscordActivityListener::class => [
                 [
                     Events\Listener\ListenerFactory::PRIORITY => -110,
                     Events\Listener\ListenerFactory::CALLBACK => 'handleCommit',
@@ -30,7 +30,7 @@ return [
             ]
         ],
         EventListenerFactory::TASK_REVIEW => [
-            Discord\DiscordActivityListener::class => [
+            Discord\Listener\DiscordActivityListener::class => [
                 [
                     Events\Listener\ListenerFactory::PRIORITY => -110,
                     Events\Listener\ListenerFactory::CALLBACK => 'handleReview',
@@ -41,8 +41,6 @@ return [
     ],
     'discord' => [
         'user'        => 'Swarm',
-        'icon'        =>
-            'https://swarm.workshop.perforce.com/view/guest/perforce_software/discord/main/images/60x60-Helix-Bee.png',
         'max_length'  => 80,
     ]
 ];	
