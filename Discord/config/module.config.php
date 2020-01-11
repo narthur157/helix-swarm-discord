@@ -9,7 +9,7 @@
 
 use Events\Listener\ListenerFactory as EventListenerFactory;
 
-$listeners = [Discord\Listener\DiscordActivityListener::class];
+$listeners = [Discord\DiscordActivityListener::class];
 
 return [
     'listeners' => $listeners,
@@ -21,7 +21,7 @@ return [
     ],
     EventListenerFactory::EVENT_LISTENER_CONFIG => [
         EventListenerFactory::TASK_COMMIT => [
-            Discord\Listener\DiscordActivityListener::class => [
+            Discord\DiscordActivityListener::class => [
                 [
                     Events\Listener\ListenerFactory::PRIORITY => -110,
                     Events\Listener\ListenerFactory::CALLBACK => 'handleCommit',
@@ -30,7 +30,7 @@ return [
             ]
         ],
         EventListenerFactory::TASK_REVIEW => [
-            Discord\Listener\DiscordActivityListener::class => [
+            Discord\DiscordActivityListener::class => [
                 [
                     Events\Listener\ListenerFactory::PRIORITY => -110,
                     Events\Listener\ListenerFactory::CALLBACK => 'handleReview',

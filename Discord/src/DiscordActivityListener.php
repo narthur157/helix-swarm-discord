@@ -66,8 +66,7 @@ class DiscordActivityListener extends AbstractEventListener
         }
         try {
             // URL to POST messages to Discord
-            // TODO Need a URL
-            $url = '<YourDiscordUrl>';
+            $url = file_get_contents('./discordUrl.txt', true);
             // Construct your Discord Commit message here
             $text = 'Review ' . $change->getId();
             $this->postDiscord($url, $text);
