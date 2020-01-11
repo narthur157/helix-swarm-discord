@@ -11,6 +11,11 @@ namespace Discord;
 
 class Module
 {
+    public function onBootstrap(Event $event)
+    {
+        $logger = $this->services->get('logger');
+        $logger->info("Discord Module Bootstrap");
+    }
 
     public function getConfig()
     {
