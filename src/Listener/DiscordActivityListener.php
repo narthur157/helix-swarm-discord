@@ -21,7 +21,6 @@ class DiscordActivityListener extends AbstractEventListener
 {
     public function handleReview(Event $event)
     {
-        /*
         $logger = $this->services->get('logger');
         $logger->info("Discord: handleReview");
         $p4Admin = $this->services->get('p4_admin');
@@ -37,12 +36,11 @@ class DiscordActivityListener extends AbstractEventListener
             $logger->err("Discord:" . $e->getMessage());
             return;
         }
-        $logger->info("Discord: handleReview end.");*/
+        $logger->info("Discord: handleReview end.");
     }
 
     public function handleCommit(Event $event)
     {
-        /*
         // connect to all tasks and write activity data
         // we do this late (low-priority) so all handlers have
         // a chance to influence the activity model.
@@ -75,12 +73,11 @@ class DiscordActivityListener extends AbstractEventListener
         } catch (\Exception $e) {
             $logger->err('Discord: ' . $e->getMessage());
         }
-        $logger->info("Discord: handleCommit end.");*/
+        $logger->info("Discord: handleCommit end.");
     }
 
     private function postDiscord($url, $msg)
     {
-        /*
         $logger = $this->services->get('logger');
         $config = $this->services->get('config');
 
@@ -123,6 +120,6 @@ class DiscordActivityListener extends AbstractEventListener
         } catch (\Exception $e) {
             $logger->err($e);
         }
-        return true;*/
+        return true;
     }
 }
