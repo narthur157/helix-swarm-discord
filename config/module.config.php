@@ -20,15 +20,15 @@ return [
         )
     ],
     EventListenerFactory::EVENT_LISTENER_CONFIG => [
-        EventListenerFactory::TASK_COMMIT => [
-            Discord\Listener\DiscordActivityListener::class => [
-                [
-                    Events\Listener\ListenerFactory::PRIORITY => -110,
-                    Events\Listener\ListenerFactory::CALLBACK => 'handleCommit',
-                    Events\Listener\ListenerFactory::MANAGER_CONTEXT => 'queue'
-                ]
-            ]
-        ],
+        // EventListenerFactory::TASK_COMMIT => [
+        //     Discord\Listener\DiscordActivityListener::class => [
+        //         [
+        //             Events\Listener\ListenerFactory::PRIORITY => -110,
+        //             Events\Listener\ListenerFactory::CALLBACK => 'handleCommit',
+        //             Events\Listener\ListenerFactory::MANAGER_CONTEXT => 'queue'
+        //         ]
+        //     ]
+        // ],
         EventListenerFactory::TASK_REVIEW => [
             Discord\Listener\DiscordActivityListener::class => [
                 [
@@ -38,9 +38,9 @@ return [
                 ]
             ]
         ]
-    ],
-    'discord' => [
-        'user'        => 'Swarm',
-        'max_length'  => 80,
     ]
+    // 'discord' => [
+    //     'user'        => 'metabuff_one',
+    //     'max_length'  => 80,
+    // ]
 ];	

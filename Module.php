@@ -14,11 +14,14 @@ class Module
     public function onBootstrap(Event $event)
     {
         $logger = $this->services->get('logger');
-        $logger->info("Discord Module Bootstrap");
+        
+        if ($logger) {
+            $logger->info("Discord Module Bootstrap");
+        }
     }
 
-    public function getConfig()
-    {
-        return include __DIR__ . '/config/module.config.php';
-    }
+    // public function getConfig()
+    // {
+    //     return include __DIR__ . '/config/module.config.php';
+    // }
 }
